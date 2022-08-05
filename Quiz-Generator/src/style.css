@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Karla:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    background-color: #16003B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Inter, sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    background-color: #F5F7FB;
+    color: #293264;
+    height: 550px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.start--screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px;
+}
+
+.start--title {
+    font-family: Karla;
+    font-weight: bold;
+}
+
+.start--description {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.start--button {
+    width: 193px;
+    height: 52px;
+    background: #4D5B9E;
+    border-radius: 15px;
+    color: #F5F7FB;
+    border-style: none;
+    font-size: 17px;
+}
+
+.designblob__1 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.designblob__2 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}   
+
+.question--container {
+    padding: 25px 75px 0px 75px;
+    max-height: 500px;
+}
+
+.question--card {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    font-size: 1.25vh;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.answer--choices {
+    display: flex;
+    gap: 13px;
+}
+
+.answer {
+    background-color: #F5F7FB;
+    max-height: 100%;
+    border: 1px solid #293264;
+    border-radius: 7.94239px;
+    text-align: center;
+    color: #293264;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.question--line {
+    height: 0px;
+    width: 399px;
+    border: .25px solid #DBDEF0;
+    margin: 15px 0px 15px 0px;
+    align-self: flex-start;
+}
+
+
+.designblob__1__quiz {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+}
+
+.designblob__2__quiz {
+    position: absolute;
+    bottom: -50px;
+    left: -70px;
+}
+
+.check--answers {
+    width: 120px;
+    height: 35px;
+    background: #4D5B9E;
+    border-radius: 15px;
+    color: #F5F7FB;
+    border-style: none;
+    font-size: 10px;
+    font-weight: 600;
+}
