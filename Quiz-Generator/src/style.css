@@ -93,9 +93,7 @@ main {
 }
 
 .answer {
-    background-color: #F5F7FB;
     max-height: 100%;
-    border: 1px solid #293264;
     border-radius: 7.94239px;
     text-align: center;
     color: #293264;
@@ -133,4 +131,16 @@ main {
     border-style: none;
     font-size: 10px;
     font-weight: 600;
+}
+
+.score{
+    color: #293264;
+    font-size: 13px;
+}
+
+.score--container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }

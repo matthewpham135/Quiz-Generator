@@ -3,10 +3,20 @@ import Start from "./components/Start"
 import Quiz from "./components/Quiz"
 
 export default function App() {
+  const [startState, setStartState] = React.useState(true)
+
+  function startQuiz(){
+    setStartState(false)
+  }
+
     return (
       <main>
-  
-        <Quiz />
+        {startState ? <Start 
+          handleClick={startQuiz}  
+        /> 
+        : 
+        <Quiz />}
+      
       </main>
     );
   }

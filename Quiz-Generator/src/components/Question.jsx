@@ -17,7 +17,7 @@ export default function Question(props) {
         })
         return result
     }
-
+    
     function shuffleArray(array) {
       for (var i = array.length - 1; i > 0; i--) {
           var j = Math.floor(Math.random() * (i + 1));
@@ -30,21 +30,40 @@ export default function Question(props) {
 
     function chooseAnswer(chosenAnswer){
         setAnswers(oldAnswers => oldAnswers.map(answer => {
-          return chosenAnswer === answer.text ? 
+          return chosenAnswer.text === answer.text ? 
               {...answer, chosen: !answer.chosen} : 
               {...answer, chosen: false}
         })
         )
     }
-
+    
     const choices = answers.map(choice => (
-        <Answer 
-          answer={choice}
-          chooseAnswer={() => chooseAnswer(choice.text)}
-          key={choice.text}
-        />
+        <button 
+           className="answer"
+           style={
+            props.status ? {
+              border: choice.chosen ? "none" : "1px solid #293264",
+              backgroundColor: choice.chosen ? "#D6DBF5" : "#F5F7FB"}
+                : 
+              {
+                backgroundColor: choice.chosen && ((choice.correct && "#94D7A2") ||
+                (!choice.correct && "#F8BCBC")),
+              border: choice.chosen ? "none" : "1px solid #293264"}
+           }
+           onClick={() => {props.checkQuestion(choice); chooseAnswer(choice)}}
+        >
+            {formatAnswer(choice.text)}
+        </button>
     ))
     
+    function formatAnswer (answer){
+      let answer_choice = answer
+      answer_choice = answer_choice.replace(/&quot;/g, '"')
+      answer_choice = answer_choice.replace(/&#039;/g, "'")
+      return answer_choice
+    }          
+
+
     let question = props.data.question;
 
     question = question.replace(/&quot;/g, '"');
